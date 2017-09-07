@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Light Bulb Challenge</title>
+</head>
+<body>
+   <div id="container">
+        <img src="img/light-bulb-off.png" width="200px" id="light-bulb">
+        <img src="img/patronus.png" id="patronus" class="fixed" style="left: 300px; top: 200px;">
+        <img src="img/patronus2.png" id="patronus2" class="fixed" style="left: 1000px; top: 200px;">
+        <img src="img/wand.png" id="wand" width="300px" class="fixed" style="left: 50px;">
+        <img src="img/wizard.png" id="wizard" class="fixed" style="left: 350px; top: 200px;">
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('.fixed').hide();
+            $('#light-bulb').mouseover(function() {
+                $('#light-bulb').attr("src", "img/light-bulb-on.png");
+                $('#patronus').show().delay(800).animate();
+                $('#patronus2').show().delay(800).animate();
+                $('#wand').show().delay(800).animate();
+                $('#wizard').show().delay(800).animate();
+
+            });
+            $('#light-bulb').mouseout(function() {
+                $('#light-bulb').attr("src", "img/light-bulb-off.png");
+                $('.fixed').hide();
+            });
+        });
+    </script>
+</body>
+</html>
